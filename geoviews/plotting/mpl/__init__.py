@@ -138,6 +138,7 @@ class GeoPlot(ProjectionPlot, ElementPlot):
     Plotting baseclass for geographic plots with a cartopy projection.
     """
 
+    # TODO:
     apply_ranges = param.Boolean(default=False, doc="""
         Do not use ranges to compute plot extents by default.""")
 

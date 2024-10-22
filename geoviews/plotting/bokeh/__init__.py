@@ -151,7 +151,7 @@ class TilePlot(GeoPlot):
 
 
 class GeoPointPlot(GeoPlot, PointPlot):
-
+    apply_ranges = param.Boolean(default=True)
     _project_operation = project_points
 
 
@@ -197,6 +197,8 @@ class GeoImageStackPlot(GeoPlot, ImageStackPlot):
 
 
 class GeoPolygonPlot(GeoPlot, PolygonPlot):
+
+    apply_ranges = param.Boolean(default=True)
 
     _project_operation = project_path
 
@@ -251,6 +253,7 @@ class GeoSegmentsPlot(GeoPlot, SegmentPlot):
 
 class GeoShapePlot(GeoPolygonPlot):
 
+    apply_ranges = param.Boolean(default=True)
     def get_data(self, element, ranges, style):
         if not isinstance(element.data['geometry'], poly_types):
             style['fill_alpha'] = 0
